@@ -2,17 +2,14 @@
 NAME        := bsq
 CXX         := g++
 
-OPTFLAGS    := -Ofast \
+OPTFLAGS    := -O3 \
                -march=native \
-               -mtune=native \
                -flto=auto \
-               -funroll-loops \
-               -fomit-frame-pointer \
-               -finline-functions \
+               -fno-fat-lto-objects \
                -falign-functions=32 \
                -falign-loops=32 \
                -fno-plt \
-               -DNDEBUG
+               -DNDEBUG \
 
 CXXFLAGS    := -std=c++20 -Wall -Wextra $(OPTFLAGS)
 LDFLAGS     := $(OPTFLAGS)
